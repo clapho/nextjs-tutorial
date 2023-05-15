@@ -1,9 +1,15 @@
-import React from 'react';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 type Props = {
 	params: {
 		slug: string;
+	};
+};
+
+export const generateMetadata = ({ params }: Props) => {
+	return {
+		title: `제품의 이름: ${params.slug}`,
 	};
 };
 
