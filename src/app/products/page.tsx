@@ -1,17 +1,11 @@
 import { getProducts } from '@/service/products';
 import Link from 'next/link';
-import styles from './page.module.css';
+import MeowArticle from '@/components/MeowArticle';
 
 // export const revalidate = 3;
 
 const ProductsPage = async () => {
 	const products = await getProducts();
-	const res = await fetch('https://meowfacts.herokuapp.com', {
-		// revalidate: 0 or cache: 'no-store' 은 서버사이드렌더링
-		next: { revalidate: 3 },
-	});
-	const data = await res.json();
-	const factText = data.data[0];
 
 	return (
 		<>
@@ -23,7 +17,7 @@ const ProductsPage = async () => {
 					</li>
 				))}
 			</ul>
-			<article className={styles.article}>{factText}</article>
+			<MeowArticle />
 		</>
 	);
 };
