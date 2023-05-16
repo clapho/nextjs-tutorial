@@ -5,6 +5,7 @@ import MeowArticle from '@/components/MeowArticle';
 // export const revalidate = 3;
 
 const ProductsPage = async () => {
+	throw new Error();
 	const products = await getProducts();
 
 	return (
