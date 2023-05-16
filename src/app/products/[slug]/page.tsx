@@ -1,6 +1,7 @@
-import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getProduct, getProducts } from '@/service/products';
+
+export const revalidate = 3;
 
 type Props = {
 	params: {
